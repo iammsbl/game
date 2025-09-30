@@ -1,0 +1,15 @@
+*{box-sizing: border-box;}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#eef2ff,#ffffff);color:#111}
+.container{max-width:720px;margin:32px auto;padding:20px;border-radius:12px;box-shadow:0 6px 30px rgba(16,24,40,0.08);background:rgba(255,255,255,0.8)}
+h1{text-align:center;margin:0 0 12px}
+.hud{display:flex;justify-content:space-between;gap:12px;padding:10px 0;font-weight:600}
+.game-area{height:420px;border-radius:8px;border:2px dashed rgba(16,24,40,0.06);background:linear-gradient(180deg,#fff,#f7fbff);position:relative;overflow:hidden}
+.dot{position:absolute;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-weight:700;cursor:pointer;user-select:none;touch-action:manipulation}
+.controls{display:flex;gap:8px;justify-content:center;margin-top:14px}
+button{padding:10px 16px;border-radius:10px;border:0;background:#4f46e5;color:#fff;font-weight:600;cursor:pointer}
+button:active{transform:translateY(1px)}
+.hint{text-align:center;color:#6b7280;margin-top:12px}
+
+
+/* smaller dot on small screens */
+@media (max-width:420px){.dot{width:40px;height:40px;font-size:13px}}
