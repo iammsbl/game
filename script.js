@@ -15,7 +15,7 @@ const BEST_KEY = 'catch-the-dot-best';
 let best = Number(localStorage.getItem(BEST_KEY) || 0);
 bestEl.textContent = best;
 
-// to show the logic
+// logic to show/hide sections
 function hideSections() {
     const sections = document.querySelectorAll('.info-section');
     sections.forEach(s => s.style.display = 'none');
@@ -30,9 +30,8 @@ function showSection(id) {
     }
 }
 
-// functions
+// game functions
 function createDot() {
-
     const d = document.createElement('div');
     d.className = 'dot';
     d.textContent = '🔥';
@@ -40,12 +39,12 @@ function createDot() {
     d.style.boxShadow = '0 6px 18px rgba(251,146,60,0.25)';
 
     d.addEventListener('click', () => {
-    if (!timerId) return;
-    score++;
-    scoreEl.textContent = score;
-    d.style.transform = 'scale(0.9)';
-    setTimeout(() => d.style.transform = '', 80);
-    moveDot();
+        if (!timerId) return;
+        score++;
+        scoreEl.textContent = score;
+        d.style.transform = 'scale(0.9)';
+        setTimeout(() => d.style.transform = '', 80);
+        moveDot();
     });
 
     d.addEventListener('touchstart', e => { e.preventDefault(); d.click(); });
@@ -86,10 +85,9 @@ startBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
     if (confirm('Reset best score?')) {
-    localStorage.removeItem(BEST_KEY);
-    best = 0;
-    bestEl.textContent = best;
-
+        localStorage.removeItem(BEST_KEY);
+        best = 0;
+        bestEl.textContent = best;
     }
 });
 
@@ -103,20 +101,20 @@ function startGame() {
 
     hideSections();
     if (!dot) {
-    dot = createDot();
-    game.appendChild(dot);
-    placeDotAtCenter();
+        dot = createDot();
+        game.appendChild(dot);
+        placeDotAtCenter();
     }
 
     moveDot();
     moveInterval = setInterval(moveDot, 900);
 
     timerId = setInterval(() => {
-    timeLeft--;
-    timeEl.textContent = timeLeft;
-    if (timeLeft <= 0) {
-    endGame();
-    }
+        timeLeft--;
+        timeEl.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            endGame();
+        }
     }, 1000);
 }
 
@@ -129,12 +127,12 @@ function endGame() {
     startBtn.disabled = false;
 
     if (score > best) {
-    best = score;
-    localStorage.setItem(BEST_KEY, String(best));
-    bestEl.textContent = best;
-    alert(`Time up! 🎉 New best: ${best} (Score: ${score})`);
+        best = score;
+        localStorage.setItem(BEST_KEY, String(best));
+        bestEl.textContent = best;
+        alert(`Time up! 🎉 New best: ${best} (Score: ${score})`);
     } else {
-    alert(`Time up! Your score: ${score}\nBest: ${best}`);
+        alert(`Time up! Your score: ${score}\nBest: ${best}`);
     }
 }
 

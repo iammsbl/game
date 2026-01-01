@@ -3,7 +3,8 @@
 }
 
 html, body {
-    height: 100%; margin: 0;
+    height: 100%;
+    margin: 0;
     font-family: Inter, system-ui, Arial, sans-serif;
     background: linear-gradient(180deg, #eef2ff, #ffffff);
     color: #111;
@@ -12,7 +13,8 @@ html, body {
 .container {
     max-width: 720px;
     margin: 32px auto;
-    padding: 20px; border-radius: 12px;
+    padding: 20px;
+    border-radius: 12px;
     box-shadow: 0 6px 30px rgba(16, 24, 40, 0.08);
     background: rgba(255, 255, 255, 0.8);
 }
@@ -63,7 +65,8 @@ h1 {
 button {
     padding: 10px 16px;
     border-radius: 10px;
-    border: 0; background: #4f46e5;
+    border: 0;
+    background: #4f46e5;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
@@ -76,11 +79,11 @@ button:active {
 
 .hint {
     text-align: center;
-    color: #6b7280; margin-top: 12px;
+    color: #6b7280;
+    margin-top: 12px;
 }
 
-
-/* about, contanct, privacy policy section */
+/* about, privacy, contact section*/
 hr {
     margin: 32px 0;
     border: 0;
@@ -124,4 +127,11 @@ hr {
     font-size: 0.75rem;
 }
 
-@media (max-width: 420px) { .dot { width: 40px; height: 40px; font-size: 13px; } }
+
+@media (max-width: 420px) {
+    .dot {
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+    }
+}
