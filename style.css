@@ -29,9 +29,10 @@ html, body {
     width: 80px;
     height: 80px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 50%; /* Makes the image circular */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 2px solid #fff;
+    display: block;
 }
 
 h1 {
@@ -98,7 +99,8 @@ button:active {
     margin-top: 12px;
 }
 
-/* info sections */
+/* Info Section Styles */
+
 hr {
     margin: 32px 0;
     border: 0;
@@ -124,13 +126,14 @@ hr {
 }
 
 .info-section {
-    display: none;
+    display: none; /* Hidden by default */
     background: #f8fafc;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #e2e8f0;
     position: relative;
     margin-top: 15px;
+    text-align: left;
 }
 
 .close-btn {
@@ -141,7 +144,6 @@ hr {
     padding: 4px 8px;
     font-size: 0.75rem;
 }
-
 
 @media (max-width: 420px) {
     .dot {
